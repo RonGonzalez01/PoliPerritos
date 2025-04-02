@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  AppWebBack:
+    build:
+      context: .
+      dockerfile: AppWebBack/docker/Dockerfile
+    container_name: AppWebBack
+    restart: always
+    ports:
+      - "8000:8000"
+    depends_on:
+      - poliperros_db
+    environment:
+      - DATABASE_URL=mysql+pymysql://root:password@poliperros_db:3306/poliperros
+
+  poliperros_db:
+    image: mysql:8.0
+    container_name: poliperros_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Malibu100199*
+      MYSQL_DATABASE: poliperros
+      MYSQL_USER: root
+      MYSQL_PASSWORD: Malibu100199*
+    ports:
+      - "3306:3306"
+    command: --max_allowed_packet=5242880
+    volumes:
+      - poliperros_data:/var/lib/mysql
+
+volumes:
+  poliperros_data:
