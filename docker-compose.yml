@@ -4,7 +4,7 @@ services:
   appwebback:
     build:
       context: .
-      dockerfile: AppWebBack/docker/Dockerfile
+      dockerfile: ./docker/Dockerfile
     container_name: appwebback
     restart: always
     ports:
