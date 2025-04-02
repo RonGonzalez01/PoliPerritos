@@ -12,7 +12,7 @@ services:
     depends_on:
       - poliperros_db
     environment:
-      - DATABASE_URL=mysql+pymysql://root:password@poliperros_db:3306/poliperros
+      - DATABASE_URL=mysql+pymysql://root:Malibu100199*@poliperros_db:3306/poliperros
 
   poliperros_db:
     image: mysql:8.0
