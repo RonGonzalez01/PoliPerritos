@@ -1,11 +1,11 @@
 version: "3.8"
 
 services:
-  AppWebBack:
+  appwebback:
     build:
       context: .
       dockerfile: AppWebBack/docker/Dockerfile
-    container_name: AppWebBack
+    container_name: appwebback
     restart: always
     ports:
       - "8000:8000"
