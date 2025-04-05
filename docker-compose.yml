@@ -21,8 +21,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: Malibu100199*
       MYSQL_DATABASE: poliperros
-      MYSQL_USER: root
-      MYSQL_PASSWORD: Malibu100199*
     ports:
       - "3306:3306"
     command: --max_allowed_packet=5242880
